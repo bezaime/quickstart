@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>African Youth Science Initiative</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+         
+        .main-navbar {
+            background: black;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 0 20px;
+        }
+
+         
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            padding-right: 20px;
+            background-color: white;
+            padding: 10px 20px 10px 10px;
+            border-radius: 8px;
+        }
+
+        .logo-image {
+            height: 50px;
+            width: auto;
+            max-width: 150px;
+            object-fit: contain;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .nav-menu li {
+            position: relative;
+        }
+
+        .nav-menu > li > a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 18px 20px;
+            font-weight: 500;
+            border-bottom: 3px solid transparent;
+            transition: background 0.3s, border-bottom-color 0.3s;
+        }
+
+        .nav-menu > li:hover > a {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-bottom-color: white;
+        }
+
+         
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: black;
+            min-width: 220px;
+            top: 100%;
+            left: 0;
+            z-index: 999;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            border-radius: 6px;
+        }
+
+        .dropdown-content li a {
+            color: white;
+            padding: 12px 16px;
+            display: block;
+            text-decoration: none;
+            white-space: nowrap;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .dropdown-content li a:hover {
+            background-color: #667eea;
+            color: white;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            padding: 18px 20px;
+            cursor: pointer;
+        }
+
+         
+        .main-content {
+            padding: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            min-height: calc(100vh - 70px);
+        }
+
+        .content-page {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            display: none;
+        }
+
+        .content-page.active {
+            display: block;
+        }
+
+        .content-page h1 {
+            color: #2d3748;
+            margin-bottom: 30px;
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .content-page h2 {
+            color: #4a5568;
+            margin: 30px 0 20px 0;
+            font-size: 1.8rem;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 10px;
+        }
+
+        .content-page p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            color: #4a5568;
+            line-height: 1.7;
+        }
+
+        .content-page ul {
+            margin: 20px 0;
+            padding-left: 30px;
+        }
+
+        .content-page li {
+            margin-bottom: 10px;
+            color: #4a5568;
+        }
+
+        .breadcrumb {
+            margin-bottom: 20px;
+            color: #667eea;
+            font-size: 0.9rem;
+        }
+
+        .breadcrumb a {
+            color: #667eea;
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+         
+        @media (max-width: 1024px) {
+            .nav-menu > li > a {
+                padding: 18px 15px;
+                font-size: 0.85rem;
+            }
+            
+            .logo-image {
+                height: 40px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-toggle {
+                display: block;
+                order: -1;
+            }
+
+            .nav-logo {
+                padding: 10px 0;
+                width: 100%;
+                justify-content: center;
+                display: flex;
+            }
+
+            .nav-menu {
+                flex-direction: column;
+                display: none;
+            }
+
+            .nav-menu.show {
+                display: flex;
+            }
+
+            .nav-menu.show .nav-logo {
+                display: flex;
+            }
+
+            .nav-menu li {
+                width: 100%;
+            }
+
+            .nav-menu > li > a {
+                padding: 15px 20px;
+                font-size: 1rem;
+                border-left: 4px solid transparent;
+            }
+
+            .nav-menu > li:hover > a {
+                border-left-color: white;
+            }
+
+            .dropdown-content {
+                position: static;
+                box-shadow: none;
+                border-radius: 0;
+                display: none;
+                background-color: rgba(0,0,0,0.8);
+            }
+
+            .dropdown-content li a {
+                color: white;
+                padding-left: 30px;
+            }
+
+            .main-content {
+                padding: 20px;
+            }
+
+            .content-page {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <nav class="main-navbar">
+        <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+        <ul class="nav-menu" id="navMenu">
+            
+            <li class="nav-logo">
+                <a href="#" onclick="showPage('home')">
+                    <img src="images/aims-rwanda.png" alt="AIMS Logo" class="logo-image">
+                </a>
+            </li>
+            
+            
+            <li><a href="#" onclick="showPage('home')">Home</a></li>
+            
+            
+            <li class="dropdown">
+                <a href="#" onclick="showPage('about')">About ▼</a>
+                <ul class="dropdown-content">
+                    <li><a href="#" onclick="showPage('who-we-are')">Who We Are</a></li>
+                    <li><a href="#" onclick="showPage('where-we-work')">Where We Work</a></li>
+                    <li><a href="#" onclick="showPage('our-mission')">Our Mission</a></li>
+                    <li><a href="#" onclick="showPage('our-team')">Our Team</a></li>
+                </ul>
+            </li>
+            
+            
+            <li class="dropdown">
+                <a href="#" onclick="showPage('what-we-do')">What We Do ▼</a>
+                <ul class="dropdown-content">
+                    <li><a href="#" onclick="showPage('programs')">Programs</a></li>
+                    <li><a href="#" onclick="showPage('services')">Services</a></li>
+                    <li><a href="#" onclick="showPage('initiatives')">Initiatives</a></li>
+                </ul>
+            </li>
+            
+            
+            <li class="dropdown">
+                <a href="#" onclick="showPage('research')">Research ▼</a>
+                <ul class="dropdown-content">
+                    <li><a href="#" onclick="showPage('publications')">Publications</a></li>
+                    <li><a href="#" onclick="showPage('current-projects')">Current Projects</a></li>
+                    <li><a href="#" onclick="showPage('research-data')">Research Data</a></li>
+                </ul>
+            </li>
+            
+            
+            <li class="dropdown">
+                <a href="#" onclick="showPage('news')">News ▼</a>
+                <ul class="dropdown-content">
+                    <li><a href="#" onclick="showPage('latest-news')">Latest News</a></li>
+                    <li><a href="#" onclick="showPage('events')">Events</a></li>
+                    <li><a href="#" onclick="showPage('press-releases')">Press Releases</a></li>
+                </ul>
+            </li>
+            
+            
+            <li class="dropdown">
+                <a href="#" onclick="showPage('apply')">Apply ▼</a>
+                <ul class="dropdown-content">
+                    <li><a href="#" onclick="showPage('requirements')">Requirements</a></li>
+                    <li><a href="#" onclick="showPage('application-process')">Application Process</a></li>
+                    <li><a href="#" onclick="showPage('deadlines')">Deadlines</a></li>
+                </ul>
+            </li>
+            
+            
+            <li class="dropdown">
+                <a href="#" onclick="showPage('contact')">Contact ▼</a>
+                <ul class="dropdown-content">
+                    <li><a href="#" onclick="showPage('contact-us')">Contact Us</a></li>
+                    <li><a href="#" onclick="showPage('locations')">Locations</a></li>
+                    <li><a href="#" onclick="showPage('staff-directory')">Staff Directory</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    
+    <main>
+        <div class="main-content">
+            
+            
+            <div id="home" class="content-page active">
+                <h1>In African's Youth the future of Science</h1>
+                <p>Welcome to our organization dedicated to empowering African youth through science education and research opportunities. We believe that the next generation of African scientists will lead groundbreaking discoveries that will benefit not only the continent but the entire world.</p>
+                <p>Our mission is to provide world-class education, research opportunities, and mentorship to young African scientists, helping them develop the skills and knowledge needed to tackle the challenges of tomorrow.</p>
+                
+                <h2>Our Impact</h2>
+                <ul>
+                    <li>Over 500 young scientists trained across 20 African countries</li>
+                    <li>50+ research projects currently underway</li>
+                    <li>Partnerships with leading universities worldwide</li>
+                    <li>100% scholarship support for qualifying students</li>
+                </ul>
+            </div>
+
+            
+            <div id="who-we-are" class="content-page">
+                <div class="breadcrumb">
+                    <a href="#" onclick="showPage('home')">Home</a> > <a href="#" onclick="showPage('about')">About</a> > Who We Are
+                </div>
+                <h1>Who We Are</h1>
+                <p>We are a pan-African organization founded in 2018 with the vision of transforming the scientific landscape across Africa by investing in its most valuable resource: its youth.</p>
+                
+                <h2>Our Story</h2>
+                <p>Founded by a group of African scientists and educators who recognized the immense potential of young African minds, our organization was born from the belief that science education is the key to Africa's sustainable development.</p>
+                
+                <h2>Our Values</h2>
+                <ul>
+                    <li><strong>Excellence:</strong> We strive for the highest standards in education and research</li>
+                    <li><strong>Innovation:</strong> We encourage creative thinking and novel approaches</li>
+                    <li><strong>Collaboration:</strong> We believe in the power of working together</li>
+                    <li><strong>Inclusivity:</strong> We welcome students from all backgrounds and regions</li>
+                </ul>
+            </div>
+            
+            <div id="where-we-work" class="content-page">
+                <div class="breadcrumb">
+                    <a href="#" onclick="showPage('home')">Home</a> > <a href="#" onclick="showPage('about')">About</a> > where-we-work
+                </div>
+                <h1>Where We Work</h1>
+                <p>We are a pan-African organization founded in 2018 with the vision of transforming the scientific landscape across Africa by investing in its most valuable resource: its youth.</p>
+                
+                <h2>Our Story</h2>
+                <p>Founded by a group of African scientists and educators who recognized the immense potential of young African minds, our organization was born from the belief that science education is the key to Africa's sustainable development.</p>
+                
+                <h2>Our Values</h2>
+                <ul>
+                    <li><strong>Excellence:</strong> We strive for the highest standards in education and research</li>
+                    <li><strong>Innovation:</strong> We encourage creative thinking and novel approaches</li>
+                    <li><strong>Collaboration:</strong> We believe in the power of working together</li>
+                    <li><strong>Inclusivity:</strong> We welcome students from all backgrounds and regions</li>
+                </ul>
+            </div>
+            
+            <div id="our-mission" class="content-page">
+                <div class="breadcrumb">
+                    <a href="#" onclick="showPage('home')">Home</a> > <a href="#" onclick="showPage('about')">About</a> > Our Mission
+                </div>
+                <h1>Our Mission</h1>
+                <p>We are a pan-African organization founded in 2018 with the vision of transforming the scientific landscape across Africa by investing in its most valuable resource: its youth.</p>
+                
+                <h2>Our Story</h2>
+                <p>Founded by a group of African scientists and educators who recognized the immense potential of young African minds, our organization was born from the belief that science education is the key to Africa's sustainable development.</p>
+                
+                <h2>Our Values</h2>
+                <ul>
+                    <li><strong>Excellence:</strong> We strive for the highest standards in education and research</li>
+                    <li><strong>Innovation:</strong> We encourage creative thinking and novel approaches</li>
+                    <li><strong>Collaboration:</strong> We believe in the power of working together</li>
+                    <li><strong>Inclusivity:</strong> We welcome students from all backgrounds and regions</li>
+                </ul>
+            </div>
+            
+            <div id="our-team" class="content-page">
+                <div class="breadcrumb">
+                    <a href="#" onclick="showPage('home')">Home</a> > <a href="#" onclick="showPage('about')">About</a> > Our our-team
+                </div>
+                <h1>Our Team</h1>
+                <p>We are a pan-African organization founded in 2018 with the vision of transforming the scientific landscape across Africa by investing in its most valuable resource: its youth.</p>
+                
+                <h2>Our Story</h2>
+                <p>Founded by a group of African scientists and educators who recognized the immense potential of young African minds, our organization was born from the belief that science education is the key to Africa's sustainable development.</p>
+                
+                <h2>Our Values</h2>
+                <ul>
+                    <li><strong>Excellence:</strong> We strive for the highest standards in education and research</li>
+                    <li><strong>Innovation:</strong> We encourage creative thinking and novel approaches</li>
+                    <li><strong>Collaboration:</strong> We believe in the power of working together</li>
+                    <li><strong>Inclusivity:</strong> We welcome students from all backgrounds and regions</li>
+                </ul>
+            </div>
+            
+            <div id="programs" class="content-page">
+                <div class="breadcrumb">
+                    <a href="#" onclick="showPage('home')">Home</a> > <a href="#" onclick="showPage('what-we-do')">What We Do</a> > Programs
+                </div>
+                <h1>Our Programs</h1>
+                <p>We offer comprehensive programs designed to nurture young African scientists at every stage of their educational journey.</p>
+                
+                <h2>Youth Science Academy</h2>
+                <p>A 12-month intensive program for high school students showing exceptional promise in science. Students receive advanced coursework, mentorship, and hands-on research experience.</p>
+                
+                <h2>University Partnership Program</h2>
+                <p>We partner with leading African and international universities to provide scholarship opportunities and exchange programs for undergraduate and graduate students.</p>
+                
+                <h2>Research Internship Program</h2>
+                <p>Summer and year-long research internships that place students in cutting-edge research laboratories across Africa and beyond.</p>
+                
+                <h2>Mentorship Network</h2>
+                <p>Our extensive network of scientists, researchers, and industry professionals provides ongoing guidance and support to our students.</p>
+            </div>
+            
+            <div id="Service" class="content-page">
+                <div class="breadcrumb">
+                    <a href="#" onclick="showPage('home')">Home</a> > <a href="#" onclick="showPage('what-we-do')">What We Do</a> > Service
+                </div>
+                <h1>Our Programs</h1>
+                <p>We offer comprehensive programs designed to nurture young African scientists at every stage of their educational journey.</p>
+                
+                <h2>Youth Science Academy</h2>
+                <p>A 12-month intensive program for high school students showing exceptional promise in science. Students receive advanced coursework, mentorship, and hands-on research experience.</p>
+                
+                <h2>University Partnership Program</h2>
+                <p>We partner with leading African and international universities to provide scholarship opportunities and exchange programs for undergraduate and graduate students.</p>
+                
+                <h2>Research Internship Program</h2>
+                <p>Summer and year-long research internships that place students in cutting-edge research laboratories across Africa and beyond.</p>
+                
+                <h2>Mentorship Network</h2>
+                <p>Our extensive network of scientists, researchers, and industry professionals provides ongoing guidance and support to our students.</p>
+            </div>
+            
+            <div id="research" class="content-page">
+                <div class="breadcrumb">
+                    <a href="#" onclick="showPage('home')">Home</a> > <a href="#" onclick="showPage('Research')">Research</a> > Research
+                </div>
+                <h1>Research</h1>
+                <p>Our research initiatives focus on addressing critical challenges facing Africa while advancing scientific knowledge globally.</p>
+                
+                <h2>Current Research Areas</h2>
+                <ul>
+                    <li>Sustainable Agriculture and Food Security</li>
+                    <li>Renewable Energy Solutions</li>
+                    <li>Public Health and Disease Prevention</li>
+                    <li>Climate Change and Environmental Conservation</li>
+                    <li>Technology and Innovation</li>
+                </ul>
+                
+                <h2>Research Impact</h2>
+                <p>Our students and faculty have published over 200 peer-reviewed papers and have been awarded numerous grants for their groundbreaking research.</p>
+            </div>
+
+            
+            <div id="contact-us" class="content-page">
+                <div class="breadcrumb">
+                    <a href="#" onclick="showPage('home')">Home</a> > <a href="#" onclick="showPage('contact')">Contact</a> > Contact Us
+                </div>
+                <h1>Contact Us</h1>
+                <p>We'd love to hear from you! Whether you're a prospective student, educator, or partner organization, we welcome your inquiries.</p>
+                
+                <h2>General Information</h2>
+                <p><strong>Email:</strong> info@africanyouthscience.org</p>
+                <p><strong>Phone:</strong> +250 123 456 789</p>
+                <p><strong>Address:</strong> Kigali Innovation City, Kigali, Rwanda</p>
+                
+                <h2>Admissions Office</h2>
+                <p><strong>Email:</strong> admissions@africanyouthscience.org</p>
+                <p><strong>Phone:</strong> +250 123 456 790</p>
+                
+                <h2>Research Inquiries</h2>
+                <p><strong>Email:</strong> research@africanyouthscience.org</p>
+                <p><strong>Phone:</strong> +250 123 456 791</p>
+            </div>
+
+            
+            <div id="requirements" class="content-page">
+                <div class="breadcrumb">
+                    <a href="#" onclick="showPage('home')">Home</a> > <a href="#" onclick="showPage('apply')">Apply</a> > Requirements
+                </div>
+                <h1>Application Requirements</h1>
+                <p>We seek motivated students who demonstrate academic excellence and a passion for scientific discovery.</p>
+                
+                <h2>General Requirements</h2>
+                <ul>
+                    <li>Must be a citizen of an African country</li>
+                    <li>Age 16-25 years old</li>
+                    <li>Strong academic record in science subjects</li>
+                    <li>Demonstrated interest in research or scientific innovation</li>
+                    <li>English proficiency (TOEFL/IELTS required for non-native speakers)</li>
+                </ul>
+                
+                <h2>Required Documents</h2>
+                <ul>
+                    <li>Completed application form</li>
+                    <li>Academic transcripts</li>
+                    <li>Personal statement (500 words)</li>
+                    <li>Two letters of recommendation</li>
+                    <li>Research proposal (for research programs)</li>
+                </ul>
+            </div>
+
+            
+            <div id="application-process" class="content-page">
+                <div class="breadcrumb">
+                    <a href="#" onclick="showPage('home')">Home</a> > <a href="#" onclick="showPage('apply')">Apply</a> > Application Process
+                </div>
+                <h1>Application Process</h1>
+                <p>Follow these steps to apply for our programs and become part of the future of African science.</p>
+                
+                <h2>Step 1: Choose Your Program</h2>
+                <p>Review our available programs and select the one that best matches your interests and career goals.</p>
+                
+                <h2>Step 2: Prepare Your Documents</h2>
+                <p>Gather all required documents including transcripts, personal statement, and letters of recommendation.</p>
+                
+                <h2>Step 3: Submit Application</h2>
+                <p>Complete the online application form and upload all supporting documents before the deadline.</p>
+                
+                <h2>Step 4: Interview Process</h2>
+                <p>Selected candidates will be invited for an interview with our admissions committee.</p>
+                
+                <h2>Step 5: Final Decision</h2>
+                <p>Successful applicants will be notified within 4-6 weeks of their interview.</p>
+            </div>
+
+        </div>
+    </main>
+
+    <script>
+        function toggleMobileMenu() {
+            const navMenu = document.getElementById('navMenu');
+            navMenu.classList.toggle('show');
+            
+            
+            const logo = document.querySelector('.nav-logo');
+            if (navMenu.classList.contains('show')) {
+                logo.style.display = 'flex';
+            } else {
+                logo.style.display = 'none';
+            }
+        }
+
+        function showPage(pageId) {
+            
+            const pages = document.querySelectorAll('.content-page');
+            pages.forEach(page => {
+                page.classList.remove('active');
+            });
+
+            
+            const selectedPage = document.getElementById(pageId);
+            if (selectedPage) {
+                selectedPage.classList.add('active');
+            }
+
+            
+            const navMenu = document.getElementById('navMenu');
+            navMenu.classList.remove('show');
+
+            
+            const logo = document.querySelector('.nav-logo');
+            if (window.innerWidth <= 768) {
+                logo.style.display = 'none';
+            }
+
+            
+            window.scrollTo(0, 0);
+        }
+
+        window.addEventListener('resize', function () {
+            const navMenu = document.getElementById('navMenu');
+            const logo = document.querySelector('.nav-logo');
+            
+            if (window.innerWidth > 768) {
+                navMenu.classList.remove('show');
+                logo.style.display = 'flex'; 
+            } else {
+                logo.style.display = navMenu.classList.contains('show') ? 'flex' : 'none';
+            }
+        });
+
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            const dropdownTriggers = document.querySelectorAll('.dropdown > a');
+            
+            dropdownTriggers.forEach(trigger => {
+                trigger.addEventListener('click', function(e) {
+                    if (window.innerWidth <= 768) {
+                        e.preventDefault();
+                        const dropdownContent = this.nextElementSibling;
+                        const isVisible = dropdownContent.style.display === 'block';
+                        
+                        
+                        document.querySelectorAll('.dropdown-content').forEach(dropdown => {
+                            dropdown.style.display = 'none';
+                        });
+                        
+                        
+                        dropdownContent.style.display = isVisible ? 'none' : 'block';
+                    }
+                });
+            });
+            
+            
+            document.addEventListener('click', function(e) {
+                if (window.innerWidth <= 768 && !e.target.closest('.dropdown')) {
+                    document.querySelectorAll('.dropdown-content').forEach(dropdown => {
+                        dropdown.style.display = 'none';
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+[menu]
+
+  [[menu.main]]
+  name = "Home"
+  url = "/"
+  weight = 1
+
+  [[menu.main]]
+  name = "About"
+  url = "#"
+  weight = 2
+  [menu.main.params]
+    dropdown = true
+
+  [[menu.main]]
+  name = "Who We Are"
+  url = "/who-we-are/"
+  parent = "About"
+  weight = 21
+
+  [[menu.main]]
+  name = "Where We Work"
+  url = "/where-we-work/"
+  parent = "About"
+  weight = 22
+
+  [[menu.main]]
+  name = "What We Do"
+  url = "/what-we-do/"
+  weight = 3
+
+  [[menu.main]]
+  name = "Research"
+  url = "/research/"
+  weight = 4
+
+  [[menu.main]]
+  name = "News and Public Engagement"
+  url = "/news-and-public-engagement/"
+  weight = 5
+
+  [[menu.main]]
+  name = "2022/2023 Academic Year"
+  url = "/2022-2023-academic-year/"
+  weight = 6
+
+  [[menu.main]]
+  name = "Apply"
+  url = "/apply/"
+  weight = 7
+
+  [[menu.main]]
+  name = "Get Involved"
+  url = "/get-involved/"
+  weight = 8
+
+  [[menu.main]]
+  name = "Donate"
+  url = "/donate/"
+  weight = 9

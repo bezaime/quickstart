@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Who We Are on In Africa’s Youth, the Future of Science</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content in Who We Are on In Africa’s Youth, the Future of Science</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 11 Jun 2025 09:25:21 +0200</lastBuildDate>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>2022 2023 Academic Year</title>
+      <link>http://localhost:1313/2022-2023-academic-year/</link>
+      <pubDate>Wed, 11 Jun 2025 09:25:21 +0200</pubDate>
+      <guid>http://localhost:1313/2022-2023-academic-year/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Apply</title>
+      <link>http://localhost:1313/apply/</link>
+      <pubDate>Wed, 11 Jun 2025 09:25:21 +0200</pubDate>
+      <guid>http://localhost:1313/apply/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Donate</title>
+      <link>http://localhost:1313/donate/</link>
+      <pubDate>Wed, 11 Jun 2025 09:25:21 +0200</pubDate>
+      <guid>http://localhost:1313/donate/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Get Involved</title>
+      <link>http://localhost:1313/get-involved/</link>
+      <pubDate>Wed, 11 Jun 2025 09:25:21 +0200</pubDate>
+      <guid>http://localhost:1313/get-involved/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>News and Public Engagement</title>
+      <link>http://localhost:1313/news-and-public-engagement/</link>
+      <pubDate>Wed, 11 Jun 2025 09:25:21 +0200</pubDate>
+      <guid>http://localhost:1313/news-and-public-engagement/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Research</title>
+      <link>http://localhost:1313/research/</link>
+      <pubDate>Wed, 11 Jun 2025 09:25:21 +0200</pubDate>
+      <guid>http://localhost:1313/research/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>What We Do</title>
+      <link>http://localhost:1313/what-we-do/</link>
+      <pubDate>Wed, 11 Jun 2025 09:25:21 +0200</pubDate>
+      <guid>http://localhost:1313/what-we-do/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Where We Work</title>
+      <link>http://localhost:1313/where-we-work/</link>
+      <pubDate>Wed, 11 Jun 2025 09:25:21 +0200</pubDate>
+      <guid>http://localhost:1313/where-we-work/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Who We Are</title>
+      <link>http://localhost:1313/who-we-are/</link>
+      <pubDate>Wed, 11 Jun 2025 09:25:21 +0200</pubDate>
+      <guid>http://localhost:1313/who-we-are/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>
