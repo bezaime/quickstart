@@ -783,7 +783,7 @@
   position: relative;
   text-align: center;
   padding: 100px 20px;
-  background: url('images/AIMS_Background.png') no-repeat center center;
+  background: url('images/Withoutlogan.png') no-repeat center center;
   background-size: cover;
   background-attachment: fixed;
   color: white;
@@ -797,46 +797,47 @@
       opacity: 1;
       transition: opacity 1s;
     ">
-      In Africa's Youth the Future of Science
+      In Africa's Youth, the Future of Science
     </h1>
 
-  <!-- Video Slider: initially hidden -->
+  <!-- Video Slider: initially hidden-->
+   
   <div id="video-slider" class="swiper video-swiper" style="width: 100%; max-width: 960px; margin: 0 auto; opacity: 0; transition: opacity 1s;">
-    <div class="swiper-wrapper">
+    <div class="swiper-wrapper"> 
       <!-- Slide 1 -->
-      <div class="swiper-slide">
+      <!--<div class="swiper-slide">
         <div style="position: relative; padding-bottom: 56.25%; height: 0;">
           <iframe src="https://www.youtube.com/embed/9725m1CJYy0" frameborder="0" allowfullscreen
                   style="position: absolute; width: 100%; height: 100%; top: 0; left: 0;"></iframe>
         </div>
-      </div>
+      </div>-->
       <!-- Slide 2 -->
-      <div class="swiper-slide">
+     <!-- <div class="swiper-slide">
         <div style="position: relative; padding-bottom: 56.25%; height: 0;">
           <iframe src="https://www.youtube.com/embed/rQTbnuEMO9Q" frameborder="0" allowfullscreen
                   style="position: absolute; width: 100%; height: 100%; top: 0; left: 0;"></iframe>
         </div>
-      </div>
+      </div>-->
       <!-- Slide 3 -->
-      <div class="swiper-slide">
+      <!-- <div class="swiper-slide">
         <div style="position: relative; padding-bottom: 56.25%; height: 0;">
           <iframe src="https://www.youtube.com/embed/dCp83wEglLQ" frameborder="0" allowfullscreen
                   style="position: absolute; width: 100%; height: 100%; top: 0; left: 0;"></iframe>
         </div>
-      </div>
+      </div>-->
     </div>
-
+    
     <!-- Navigation Controls -->
     <div class="swiper-pagination"></div>
     <div class="swiper-button-prev"></div>
-    <div class="swiper-button-next"></div>
+    <div class="swiper-button-next"></div> 
   </div>
 </div>
         
         
         
         <div class="container">
-            <div class="title">AIMS Rwanda Footprint </div>
+            <div class="title">About AIMS Rwanda </div>
             <div class="card">
                 Established in 2016, AIMS Rwanda is the 5th Centre in the AIMS pan-African network of centres of excellence enabling Africa’s 
                 talented students to become innovators driving the continent’s scientific, educational and economic self-sufficiency.
@@ -845,112 +846,336 @@
         
 <!-- START: Quick Figures with animated counters -->
 <div class="quick-figures">
-  <h2 style="background: linear-gradient(to right, #3498db, #2c3e50); color: white; padding: 15px; text-align: center; margin-bottom: 20px;">Quick Figures</h2>
+  <h2 style="background: linear-gradient(to right, #3498db, #2c3e50); color: white; padding: 15px; text-align: center; margin-bottom: 20px;">AIMS Rwanda Footprint </h2>
+  
   <div class="stats-container">
+
     <div class="stat-item">
       <div class="stat-icon"><i class="fas fa-users"></i></div>
-      <div class="stat-number" data-count="75">0</div>
-      <div class="stat-label">Current Students</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-icon"><i class="fas fa-university"></i></div>
-      <div class="stat-number" data-count="3">0</div>
-      <div class="stat-label">Master Programs</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-icon"><i class="fas fa-graduation-cap"></i></div>
-      <div class="stat-number" data-count="2000">0</div>
+      <div class="stat-number" data-count="510" data-symbol="+">0</div>
       <div class="stat-label">Alumni</div>
     </div>
+
+    <div class="stat-item">
+      <div class="stat-icon"><i class="fas fa-university"></i></div>
+      <div class="stat-number" data-count="39" data-symbol="%">0</div>
+      <div class="stat-label">Women</div>
+    </div>
+
+    <div class="stat-item">
+      <div class="stat-icon"><i class="fas fa-graduation-cap"></i></div>
+      <div class="stat-number" data-count="36">0</div>
+      <div class="stat-label">African Countries</div>
+    </div>
+
     <div class="stat-item">
       <div class="stat-icon"><i class="fas fa-user-graduate"></i></div>
-      <div class="stat-number" data-count="138">0</div>
-      <div class="stat-label">Researchers</div>
+      <div class="stat-number" data-count="73" data-symbol="%">0</div>
+      <div class="stat-label">Alumni currently employed in Africa</div>
     </div>
+
   </div>
 </div>
+
+<script>
+const counters = document.querySelectorAll('.stat-number');
+
+counters.forEach(counter => {
+    const symbol = counter.getAttribute('data-symbol') || "";
+    const target = +counter.getAttribute('data-count');
+
+    const updateCount = () => {
+        const count = +counter.innerText.replace(/\D/g,'');
+        const increment = target / 100;
+
+        if(count < target){
+            counter.innerText = Math.ceil(count + increment) + symbol;
+            setTimeout(updateCount, 20);
+        } else {
+            counter.innerText = target + symbol;
+        }
+    };
+
+    updateCount();
+});
+</script>
 <!-- END: Quick Figures -->
 
-<!-- START: Latest News -->
-<section class="section" style="padding: 60px 20px; background-color: #f9f9f9;">
-  <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 40px; color: #2c3e50;">Latest News</h2>
-  <div style="display: flex; flex-wrap: wrap; gap: 30px; justify-content: center;">
-    
-    <!-- News Card 1 -->
-    <div class="latest-news-card" style="width: 300px; background: white; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); padding: 20px;">
-      <img src="images/news-placeholder.jpg" alt="News 1" style="width: 100%; height: 180px; object-fit: cover; border-radius: 8px;">
-      <h3 style="margin-top: 15px; color: #333;">AIMS Hosts Global Math Conference</h3>
-      <p style="font-size: 0.95rem; color: #666;">Our students and faculty gathered with global experts in a major international event...</p>
-      <a href="#" style="color: #3498db; font-weight: bold;">Read More →</a>
-    </div>
+<!-- =======================
+     DEGREE PROGRAMMES SECTION
+======================= -->
+<section style="
+    padding: 80px 0;
+    background: url('images/Students.jpeg') center/cover no-repeat;
+    position: relative;
+">
 
-    <!-- News Card 2 -->
-    <div class="latest-news-card" style="width: 300px; background: white; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); padding: 20px;">
-      <img src="images/news-placeholder.jpg" alt="News 2" style="width: 100%; height: 180px; object-fit: cover; border-radius: 8px;">
-      <h3 style="margin-top: 15px; color: #333;">New Research Program Launched</h3>
-      <p style="font-size: 0.95rem; color: #666;">We are thrilled to announce a new climate-focused research initiative for Africa...</p>
-      <a href="#" style="color: #3498db; font-weight: bold;">Read More →</a>
-    </div>
+    <!-- Dark overlay for readability -->
+    <div style="
+        position:absolute;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+        background: rgba(0,0,0,0.55);
+    "></div>
 
-    <!-- News Card 3 -->
-    <div class="latest-news-card" style="width: 300px; background: white; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); padding: 20px;">
-      <img src="images/news-placeholder.jpg" alt="News 3" style="width: 100%; height: 180px; object-fit: cover; border-radius: 8px;">
-      <h3 style="margin-top: 15px; color: #333;">Women in STEM: AIMS Takes the Lead</h3>
-      <p style="font-size: 0.95rem; color: #666;">AIMS celebrates the success of women scientists with inspiring talks and mentorship programs...</p>
-      <a href="#" style="color: #3498db; font-weight: bold;">Read More →</a>
-    </div>
+    <div style="max-width: 1100px; margin: auto; padding: 0 20px; position:relative; z-index:2;">
 
-  </div>
+        <!-- HEADER -->
+        <h2 style="
+            font-size: 34px;
+            font-weight: 700;
+            margin-bottom: 40px;
+            color: #ffffff;
+            text-align: center;
+        ">Degree Programmes</h2>
+
+        <style>
+            .degree-table {
+                width: 100%;
+                border-collapse: collapse;
+                background: rgba(255,255,255,0.95);
+                border-radius: 14px;
+                overflow: hidden;
+                font-family: Arial, sans-serif;
+                box-shadow: 0px 6px 25px rgba(0,0,0,0.25);
+            }
+
+            .degree-table td {
+                padding: 35px;
+                vertical-align: top;
+                border-right: 1px solid #e5e5e5;
+            }
+
+            .degree-table td:last-child {
+                border-right: none;
+            }
+
+            .degree-title {
+                font-size: 22px;
+                font-weight: 700;
+                color: #8B0000;
+                margin-bottom: 15px;
+            }
+
+            .info-text {
+                font-size: 16px;
+                line-height: 1.7;
+                color: #333;
+            }
+
+            .learn-btn {
+                display: inline-block;
+                margin-top: 18px;
+                padding: 11px 20px;
+                background: #0073e6;
+                color: #fff;
+                border-radius: 6px;
+                text-decoration: none;
+                font-size: 15px;
+                font-weight: 600;
+                transition: 0.3s;
+            }
+
+            .learn-btn:hover {
+                background: #005bb5;
+            }
+
+            @media(max-width: 768px) {
+                .degree-table td {
+                    display: block;
+                    width: 100%;
+                    border-right: none;
+                    border-bottom: 1px solid #e5e5e5;
+                }
+
+                .degree-table td:last-child {
+                    border-bottom: none;
+                }
+            }
+        </style>
+
+        <!-- DEGREE TABLE -->
+        <table class="degree-table">
+            <tr>
+                <td>
+                    <div class="degree-title">Regular Masters Program</div>
+                    <div class="info-text">
+                        MSc in Mathematical Sciences — with different streams (e.g. Pure Math, AI in Science,
+                        Machine Intelligence, Epidemiology, Climate Change).
+                    </div>
+                    <a href="#" onclick="showPage('Programs')" class="learn-btn">Learn more</a>
+                </td>
+
+                <td>
+                    <div class="degree-title">Co-operative Masters Program</div>
+                    <div class="info-text">
+                        A complementary work-integrated learning placement program based on collaboration between
+                        industry and academia on student projects.<br><br>
+                        MSc in Malaria Modelling and Mathematical Epidemiology.
+                    </div>
+                    <a href="#" onclick="showPage('Programs')" class="learn-btn">Learn more</a>
+                </td>
+            </tr>
+        </table>
+
+    </div>
+</section>
+
+
+
+<!-- =======================
+        LATEST NEWS
+======================= -->
+<section id="latest-news" style="padding:80px 20px; background:linear-gradient(135deg,#f5f7fb,#eef2f7);">
+
+<h2 style="
+text-align:center;
+font-size:36px;
+margin-bottom:60px;
+color:#1b2a4e;
+font-weight:700;
+letter-spacing:0.5px;
+">
+Latest News & Updates
+</h2>
+
+<style>
+#latest-news .news-container{
+display:flex;
+flex-wrap:wrap;
+gap:35px;
+justify-content:center;
+}
+
+#latest-news .news-card{
+width:320px;
+background:#fff;
+border-radius:16px;
+overflow:hidden;
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
+transition:all 0.35s ease;
+position:relative;
+}
+
+#latest-news .news-card:hover{
+transform:translateY(-12px);
+box-shadow:0 18px 40px rgba(0,0,0,0.18);
+}
+
+#latest-news .news-image{
+position:relative;
+overflow:hidden;
+height:200px;
+}
+
+#latest-news .news-image img{
+width:100%;
+height:100%;
+object-fit:cover;
+transition:0.6s;
+}
+
+#latest-news .news-card:hover img{
+transform:scale(1.08);
+}
+
+#latest-news .news-body{
+padding:22px;
+}
+
+#latest-news .news-title{
+font-size:20px;
+font-weight:700;
+color:#16213e;
+margin-bottom:10px;
+}
+
+#latest-news .news-text{
+font-size:15px;
+color:#555;
+line-height:1.6;
+margin-bottom:18px;
+}
+
+#latest-news .read-btn{
+display:inline-block;
+padding:10px 18px;
+background:#8B0000;
+color:#fff;
+text-decoration:none;
+border-radius:6px;
+font-size:14px;
+font-weight:600;
+transition:0.3s;
+}
+
+#latest-news .read-btn:hover{
+background:#c40000;
+}
+
+@media(max-width:768px){
+#latest-news .news-card{width:90%;}
+}
+</style>
+
+<div class="news-container">
+
+<!-- News 1 -->
+<div class="news-card">
+<div class="news-image">
+<img src="images/Blog 1.jpeg" alt="Blog 1">
+</div>
+<div class="news-body">
+<div class="news-title">Investing in Africa’s Youth is Advancing the SDGs Agenda</div>
+<div class="news-text">
+<b>Why the Africa SDGs Week is a model worth scaling </b>
+<p> In October 2024, across 15 African countries, thousands of young people proved something development actors have long known,
+but too rarely act on.</p>
+</div>
+<a href="javascript:void(0)" onclick="showPage('Blog')" class="read-btn">Read More</a>
+</div>
+</div>
+
+<!-- News 2 -->
+<div class="news-card">
+<div class="news-image">
+<img src="images/Blog 2.jpg" alt="Blog 2">
+</div>
+<div class="news-body">
+<div class="news-title">AIMS Joins the Open Quantum Institute (OQI)</div>
+<div class="news-text">
+The African Institute for Mathematical Sciences (AIMS) has joined the Open Quantum Institute (OQI) as a new member. The
+membership agreement which was signed on 3rd December, 2024, marks an important step in AIMS’ work in Africa leading in the
+research, development and application of quantum technologies to address global challenges.
+</div>
+<a href="javascript:void(0)" onclick="showPage('Blog')" class="read-btn">Read More</a>
+</div>
+</div>
+
+<!-- News 3 -->
+<div class="news-card">
+<div class="news-image">
+<img src="images/Blog 3.jpeg" alt="Blog 3">
+</div>
+<div class="news-body">
+<div class="news-title">AIMS Signed an MoU with NISR to renew the partnership of building the data science capacity of
+Rwandan Professionals</div>
+<div class="news-text">
+On 29th November 2024, the African Institute for Mathematical Sciences (AIMS) and the <b>National Institute of Statistics of
+Rwanda (NISR)</b> renewed their partnership to symbolize a new chapter in the existing collaboration focused on shared priorities.
+</div>
+<a href="javascript:void(0)" onclick="showPage('Blog =')" class="read-btn">Read More</a>
+</div>
+</div>
+
+</div>
 </section>
 
 <!-- END: Latest News -->
 
-<!-- START: Enhanced Partners Section with Perfectly Sized Logos -->
-<section class="partners-section" style="padding: 30px 10px; background: linear-gradient(135deg, #1a3a1f 0%, #2d5a34 100%);">
-  <div class="section-container" style="max-width: 3000px; margin: 0 auto;">
-    <h2 style="text-align: center; font-size: 2.8rem; margin-bottom: 50px; color: white; position: relative; display: inline-block; left: 50%; transform: translateX(-50%);">
-      <span style="display: inline-block; padding: 0 20px; background: linear-gradient(135deg, #1a3a1f 0%, #2d5a34 100%); position: relative; z-index: 2;">
-        Our Valued Partners
-        <i class="fas fa-handshake" style="margin-left: 15px; color: #f8c537;"></i>
-      </span>
-      <span style="position: absolute; bottom: 10px; left: 0; width: 100%; height: 3px; background: linear-gradient(90deg, transparent, #f8c537, transparent); z-index: 1;"></span>
-    </h2>
-    
-    <div class="partners-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; align-items: center; padding: 30px 0;">
-      <!-- Partner 1 -->
-      <div class="partner-card" style="background: white; border-radius: 12px; padding: 20px; display: flex; justify-content: center; align-items: center; height: 150px; transition: all 0.3s ease; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
-        <img src="images/rwandaFlag.png" alt="Government of Rwanda" style="max-height: 80px; max-width: 100%; width: auto; object-fit: contain; transition: all 0.3s ease;">
-      </div>
-      
-      <!-- Partner 2 -->
-      <div class="partner-card" style="background: white; border-radius: 12px; padding: 20px; display: flex; justify-content: center; align-items: center; height: 150px; transition: all 0.3s ease; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
-        <img src="images/mastercard.png" alt="Mastercard Foundation" style="max-height: 80px; max-width: 100%; width: auto; object-fit: contain; transition: all 0.3s ease;">
-      </div>
-      
-      <!-- Partner 3 -->
-      <div class="partner-card" style="background: white; border-radius: 12px; padding: 20px; display: flex; justify-content: center; align-items: center; height: 150px; transition: all 0.3s ease; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
-        <img src="images/partner3.png" alt="Partner 3" style="max-height: 80px; max-width: 100%; width: auto; object-fit: contain; transition: all 0.3s ease;">
-      </div>
-      
-      <!-- Partner 4 -->
-      <div class="partner-card" style="background: white; border-radius: 12px; padding: 20px; display: flex; justify-content: center; align-items: center; height: 150px; transition: all 0.3s ease; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
-        <img src="images/partner4.png" alt="Partner 4" style="max-height: 80px; max-width: 100%; width: auto; object-fit: contain; transition: all 0.3s ease;">
-      </div>
-      
-      <!-- Partner 5 -->
-      <div class="partner-card" style="background: white; border-radius: 12px; padding: 20px; display: flex; justify-content: center; align-items: center; height: 150px; transition: all 0.3s ease; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
-        <img src="images/partner5.png" alt="Partner 5" style="max-height: 80px; max-width: 100%; width: auto; object-fit: contain; transition: all 0.3s ease;">
-      </div>
-    </div>
-    
-    <p style="text-align: center; color: rgba(255,255,255,0.8); font-size: 1.1rem; margin-top: 40px; max-width: 800px; margin-left: auto; margin-right: auto;">
-      We proudly collaborate with leading organizations to advance mathematical sciences in Africa
-    </p>
-  </div>
-</section>
 
-
-<!-- END: Partners Section -->
 
 <!-- START: Testimonial Video Section -->
 <section class="testimonial-section" style="padding: 60px 20px; background-color: #f8f9fa;">
@@ -1001,7 +1226,7 @@
   </div>
 
   <div style="text-align: center; margin-top: 30px;">
-    <a href="#" class="view-more-btn" onclick="showPage('Students')">
+    <a href="#" class="view-more-btn" onclick="showPage('Alumni')">
       View More Stories <i class="fas fa-arrow-right"></i>
     </a>
   </div>
@@ -1137,49 +1362,464 @@
     student success, and collaborative innovation. Our leadership team ensures a dynamic and 
     inclusive environment that nurtures intellectual growth, addresses contemporary challenges,
     and fosters creativity across disciplines.</p>
+    <!-- ===== Leadership Section ===== -->
+<section style="padding:60px 20px; background:#f4f6f9; font-family:'Poppins', sans-serif;">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<div style="max-width:1100px; margin:auto;">
+<h2 style="font-size:34px; font-weight:700; margin-bottom:40px; color:#111;">
+Center President
+</h2>
+
+<!-- ===== PROFILE CARD START ===== -->
+<div style="
+display:flex;
+flex-wrap:wrap;
+background:#ffffff;
+border-radius:14px;
+box-shadow:0 8px 25px rgba(0,0,0,0.08);
+overflow:hidden;
+margin-bottom:35px;
+">
+
+<!-- LEFT PHOTO SIDE -->
+<div style="
+flex:1 1 300px;
+background:#fafafa;
+padding:30px;
+text-align:center;
+border-right:1px solid #eee;
+">
+
+<img src="images/Sam-Yala.png" alt="Profile Photo"
+style="width:100%; max-width:220px; border-radius:12px; margin-bottom:20px;">
+
+<h3 style="font-size:22px; font-weight:600; margin-bottom:8px;">
+Prof. Dr. Sam Yala
+</h3>
+
+<div style="font-size:15px; color:#777; margin-bottom:10px;">
+Centre President, AIMS Rwanda and President, AIMS Global Network.
+</div>
+
+<!--<div style="font-size:14px; color:#555;">
+Department / Organization
+</div> -->
+
+</div>
+
+<!-- RIGHT CONTENT SIDE -->
+<div style="flex:2 1 500px; padding:35px;">
+
+<p style="font-size:16px; line-height:1.8; color:#333;">
+Prof. Dr. Sam Yala is the AIMS Global Network President and AIMS Rwanda Centre President, 
+where he oversees and advances the organization’s mission of empowering talented young Africans 
+to become creative leaders in science and technology.
+</p>
+<p style="font-size:16px; line-height:1.8; color:#333;">
+Prof. Sam joined AIMS in 2018 after a 15+ year dual professional track
+ in both the academia sector and in the high-tech industry in Europe and Africa, 
+ where he gained an extensive experience in developing and bringing advanced technologies 
+ and innovation, including blockchain and crypto security, to the market, 
+ with the ability to lead multidisciplinary and multicultural teams, both in academia and in Industry.
+
+</p>
+<p style="font-size:16px; line-height:1.8; color:#333;">
+He holds a PhD degree in Applied Sciences from Louvain School of Engineering, 
+and a Business Administration degree from Louvain School of Management. 
+He’s a professor of Electronics and Computer Security, and his research focus is two-fold: 
+(1) digital control engineering using power electronics and (2) applied cryptography & computer security.
+
+</p>
+<!-- OPTIONAL EXTRA FIELDS -->
+<div style="margin-top:20px;">
+<p style="margin:5px 0;"><strong>Email:</strong> example@email.com</p>
+<p style="margin:5px 0;"><strong>Phone:</strong> +250 XXX XXX XXX</p>
+<p style="margin:5px 0;"><strong>Office:</strong> Kigali, Rwanda</p>
+</div>
+
+</div>
+</div>
+<!-- ===== PROFILE CARD END ===== -->
+<h2 style="font-size:34px; font-weight:700; margin-bottom:40px; color:#111;">
+Academic Provost
+</h2>
+
+<!-- ===== COPY THIS BLOCK FOR ANOTHER PERSON ===== -->
+<div style="
+display:flex;
+flex-wrap:wrap;
+background:#ffffff;
+border-radius:14px;
+box-shadow:0 8px 25px rgba(0,0,0,0.08);
+overflow:hidden;
+margin-bottom:35px;
+">
+
+<div style="flex:1 1 300px; background:#fafafa; padding:30px; text-align:center; border-right:1px solid #eee;">
+<img src="images/blaise.png" style="width:100%; max-width:220px; border-radius:12px; margin-bottom:20px;">
+<h3 style="font-size:22px; font-weight:600;">Prof. Blaise Tchpnda</h3>
+<div style="font-size:15px; color:#777;">Academic Director</div>
+<div style="font-size:14px; color:#555;">AIMS Rwanda</div>
+</div>
+
+<div style="flex:2 1 500px; padding:35px;">
+<p style="font-size:16px; line-height:1.8; color:#333;">
+
+Prof. Tchapnda, Academic Director AIMS Rwanda, is responsible for all academic matters at AIMS Rwanda. 
+He is a mathematician specializing in Analysis of Hyperbolic Differential Equations such as 
+Einstein’s equations of General Relativity. He holds a M.Sc. and a PhD in Mathematics 
+from University of Yaoundé and a second PhD in Mathematics from the Technical University of Berlin. Prof. 
+Tchapnda has been a Postdoctoral fellow with Max-Planck Institute for Gravitational Physics 
+in Potsdam, a Junior Associate with the Abdus Salam International Centre for Theoretical Physics (ICTP) of 
+Trieste in Italy from 2002 to 2010 and is a Regular Associate with ICTP for the period 2015-2020.
+
+</p>
+
+<p style="font-size:16px; line-height:1.8; color:#333;">
+
+Before joining AIMS, Blaise was an Associate Professor of Mathematics with the University of Yaoundé I. 
+He has over 25 years of experience in training students in Mathematics.
+
+</p>
+<div style="margin-top:20px;">
+<p><strong>Email:</strong> leader@email.com</p>
+<p><strong>Office:</strong> Kigali</p>
+</div>
+
+</div>
+
+</div>
+<!-- ===== END SECOND PROFILE ===== -->
+
+<div style="
+display:flex;
+flex-wrap:wrap;
+background:#ffffff;
+border-radius:14px;
+box-shadow:0 8px 25px rgba(0,0,0,0.08);
+overflow:hidden;
+margin-bottom:35px;
+">
+
+<div style="flex:1 1 300px; background:#fafafa; padding:30px; text-align:center; border-right:1px solid #eee;">
+<img src="images/yvonne.jpg" style="width:100%; max-width:220px; border-radius:12px; margin-bottom:20px;">
+<h3 style="font-size:22px; font-weight:600;">Marie Yvonne Uwera</h3>
+<div style="font-size:15px; color:#777;">Academic Support Officer</div>
+<div style="font-size:14px; color:#555;">AIMS Rwanda</div>
+</div>
+
+<div style="flex:2 1 500px; padding:35px;">
+<p style="font-size:16px; line-height:1.8; color:#333;">
+
+Marie Yvonne Uwera has been a Tutor at AIMS Rwanda. 
+She also worked as a Researcher for the African Centre of Meteorological Application for Development (ACMAD) Niger, 
+Niamey and a Data Analyst for HADECO LTD Rwanda. She has been in other Organizations, 
+including RAWISE Rwalda and Trust DC in Rwanda.
+
+</p>
+
+<p style="font-size:16px; line-height:1.8; color:#333;">
+
+Marie Yvonne Uwera holds a Master's degree in Mathematical Science from the University of Stellenbosch, 
+AIMS South Africa, and a Bachelor's Degree in Electrical Engineering from the University of Rwanda.
+
+</p>
+<div style="margin-top:20px;">
+<p><strong>Email:</strong> leader@email.com</p>
+<p><strong>Office:</strong> Kigali</p>
+</div>
+
+</div>
+
+</div>
+<!-- ===== END Third PROFILE ===== -->
+ <div style="
+display:flex;
+flex-wrap:wrap;
+background:#ffffff;
+border-radius:14px;
+box-shadow:0 8px 25px rgba(0,0,0,0.08);
+overflow:hidden;
+margin-bottom:35px;
+">
+
+<div style="flex:1 1 300px; background:#fafafa; padding:30px; text-align:center; border-right:1px solid #eee;">
+<img src="images/photo3.png" style="width:100%; max-width:220px; border-radius:12px; margin-bottom:20px;">
+<h3 style="font-size:22px; font-weight:600;">Dr. Roger Fidèle Ranomenjanahary </h3>
+<div style="font-size:15px; color:#777;">Head Tutor</div>
+<div style="font-size:14px; color:#555;">AIMS Rwanda</div>
+</div>
+
+<div style="flex:2 1 500px; padding:35px;">
+<p style="font-size:16px; line-height:1.8; color:#333;">
+
+Dr. Roger Fidèle Ranomenjanahary received his Ph.D. in Mathematics in 2019 from The University of Texas at Dallas, 
+under the supervision of Prof. Vladimir Dragović. His research focuses on Discrete Geometry, 
+Dynamical Systems, and the Geometry of Mathematical Billiards. 
+His doctoral work explored the geometric and combinatorial properties of nets in the plane and higher dimensions, 
+particularly those linked to integrable systems. Dr. Roger developed new methods for constructing confocal incircular nets and 
+checkerboard configurations, and extended Böhm’s theorem to higher-dimensional Euclidean spaces. 
+His work has been published in Integrable Systems and Algebraic Geometry and the Proceedings of the Steklov Institute of Mathematics.
+
+
+</p>
+
+<p style="font-size:16px; line-height:1.8; color:#333;">
+
+Before pursuing his Ph.D., Dr Roger earned a Master’s degree in Mathematical Sciences from AIMS Senegal. 
+After completing his doctorate, he returned to Madagascar and taught undergraduate and 
+graduate mathematics courses in both public and private universities.
+</p>
+<p style="font-size:16px; line-height:1.8; color:#333;">
+
+He is currently the Head of Teaching Assistants at AIMS Rwanda where he leads a team that supports both core and elective courses across the academic program. 
+Dr Roger coordinates tutorial schedules, organises review sessions, and helps students with academic challenges. Dr Roger has also mentored teaching assistants, guiding them in developing effective teaching methods and supporting diverse learning styles. He has worked closely with the Academic Director and visiting lecturers to ensure courses run smoothly and students stay on track throughout the year.
+
+</p>
+<div style="margin-top:20px;">
+<p><strong>Email:</strong> leader@email.com</p>
+<p><strong>Office:</strong> Kigali</p>
+</div>
+
+</div>
+
+</div>
+<!-- ===== END Fourth PROFILE ===== -->
+</div>
+</section>
+    
     
     
 </div>
 
 
+<!-- ===== End Leadership Section ===== -->
+
+
+
             <!-- AIMS Initiative -->
-            <div id="AIMS-Initiative" class="content-page">
-                <div class="breadcrumb">
-                    <a href="#" onclick="showPage('home')">Home</a> > <a href="#" onclick="showPage('about')">About</a> > AIMS Initiative
-                </div>
-                <h1>AIMS Initiative</h1>
-                <p>We are a pan-African organization founded in 2018 with the vision of transforming the scientific landscape across Africa by investing in its most valuable resource: its youth.</p>
-                
-                <h2>Our Story</h2>
-                <p>Founded by a group of African scientists and educators who recognized the immense potential of young African minds, our organization was born from the belief that science education is the key to Africa's sustainable development.</p>
-                
-                <h2>Our Values</h2>
-                <ul>
-                    <li><strong>Excellence:</strong> We strive for the highest standards in education and research</li>
-                    <li><strong>Innovation:</strong> We encourage creative thinking and novel approaches</li>
-                    <li><strong>Collaboration:</strong> We believe in the power of working together</li>
-                    <li><strong>Inclusivity:</strong> We welcome students from all backgrounds and regions</li>
-                </ul>
-            </div>
+            <div id="AIMS-Initiative" class="content-page" style="line-height:1.6; font-family:Arial, sans-serif;">
+
+    <div class="breadcrumb" style="margin-bottom:15px; font-size:14px; color:#555;">
+        <a href="#" onclick="showPage('home')" style="color:#0066cc; text-decoration:none;">Home</a> >
+        <a href="#" onclick="showPage('about')" style="color:#0066cc; text-decoration:none;">About</a> >
+        <span style="font-weight:bold;">AIMS Initiative</span>
+    </div>
+
+    <h1 style="margin-top:0; color:#333;">AIMS Initiative</h1>
+
+    <h2 style="color:#b80000; margin-bottom:8px;">Next Einstein Forum → Future of Science Africa</h2>
+
+    <p>
+        Headed by <strong>Dr. Charles Mberi Lebon Kimpolo</strong>, Director of the AIMS Industry Initiative, 
+        the Next Einstein Forum was launched by AIMS with multiple partners as a platform connecting science, 
+        society, and policy in Africa and worldwide — with the goal of leveraging science for global human development.
+    </p>
+
+    <p>
+        The NEF, soon to be renamed <strong>Future of Science</strong>, believes Africa’s scientific contributions are crucial 
+        for global progress. At the centre of NEF’s mission are Africa’s young people — the engine of the continent’s scientific renaissance.
+        Several annual pan-African initiatives emerged from this effort, including:
+    </p>
+
+    <ul>
+        <li>Africa Science Week</li>
+        <li>Africa SDGs Week</li>
+        <li>and others</li>
+    </ul>
+
+    <hr style="margin:25px 0; border:none; border-top:1px solid #ddd;">
+
+    <h2 style="color:#b80000;">Teacher Training Program (2018–2023)</h2>
+
+    <p>
+        The AIMS Teacher Training Program (TTP) began in Rwanda in 2018 to improve mathematics and STEM learning outcomes 
+        for secondary school students.
+    </p>
+
+    <p>
+        Operating across 14 districts, TTP places teachers at the center of implementation.
+        Its unique approach connects the entire ecosystem to drive sustainable, long-term change through four core pillars:
+    </p>
+
+    <ul>
+        <li>Training of teachers</li>
+        <li>Providing learning materials, resources, and ICT support</li>
+        <li>Outreach and public engagement</li>
+        <li>Evidence generation for policy dialogue</li>
+    </ul>
+
+    <p>
+        Since inception, AIMS TTP has:
+        <br>• Empowered over <strong>7,000 teachers</strong>
+        <br>• Launched <strong>14 smart classrooms</strong>
+        <br>• Distributed <strong>200 science kits</strong> to schools
+        <br>• Reached <strong>200,000+ students and community members</strong>
+        <br>• Played a key role in national STEM policy dialogues
+    </p>
+
+    <hr style="margin:25px 0; border:none; border-top:1px solid #ddd;">
+
+    <h2 style="color:#b80000;">Pan-African Mathematics Olympiad (2023)</h2>
+
+    <p>
+        PAMO 2023 marked the 30th Pan-African Mathematics Olympiad, hosted for the first time in Kigali, Rwanda.
+        Organized by AIMS Rwanda with support from the Ministry of Education, University of Rwanda, 
+        the Government of Rwanda, and the African Mathematics Union, the event welcomed 
+        <strong>100 top high school students from 34 African countries</strong>.
+    </p>
+
+    <p>
+        This was the largest and most diverse PAMO to date, showcasing African youth's mathematical excellence. 
+        It also featured a career fair and fieldwork activities.
+    </p>
+
+    <hr style="margin:25px 0; border:none; border-top:1px solid #ddd;">
+
+    <h2 style="color:#b80000;">African Master’s in Machine Intelligence (AMMI)</h2>
+
+    <p>
+        The African Master’s in Machine Intelligence (AMMI) is an intensive one-year, fully funded graduate program 
+        providing world-class training in machine learning and its applications. 
+        It aims to produce highly skilled researchers prepared to address Africa’s present and future technological needs.
+    </p>
+
+    <p>
+        AMMI launched in Rwanda on <strong>15 October 2018</strong>, supported by Facebook, Google, and the global AI community.
+        Founded by <strong>Moustapha Cissé</strong>, Professor of Machine Learning and Lead of Google AI Accra, 
+        the program works to build a strong, ethical AI ecosystem across the continent.
+    </p>
+
+    <p style="margin-top:20px;">
+        <a href="https://aimsammi.org" target="_blank" rel="noopener"
+           style="background:#b80000; color:#fff; padding:10px 16px; border-radius:6px; 
+                  text-decoration:none; font-weight:bold; display:inline-block;">
+            For more information
+        </a>
+    </p>
+
+</div>
+
+            
             <!-- Global Partnerships -->
-            <div id="Global-Partnerships" class="content-page">
-                <div class="breadcrumb">
-                    <a href="#" onclick="showPage('home')">Home</a> > <a href="#" onclick="showPage('about')">About</a> > Global Partnerships
+<div id="Global-Partnerships" class="content-page" 
+     style="line-height: 1.7; font-family: Arial, sans-serif; color: #222;">
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb" style="margin-bottom: 20px; font-size: 14px; color: #555;">
+        <a href="#" onclick="showPage('home')" style="color:#0066cc; text-decoration:none;">Home</a> >
+        <a href="#" onclick="showPage('about')" style="color:#0066cc; text-decoration:none;">About</a> >
+        <span style="font-weight:bold;">Global Partnerships</span>
+    </div>
+
+    <!-- Title -->
+    <h1 style="margin-top: 0; color:#1a3a1f; font-size: 32px; font-weight: 800;">
+        Global Partnership
+    </h1>
+
+    <p>
+        AIMS Rwanda partners with universities, governments, and global organizations 
+        to advance excellence in mathematical sciences and interdisciplinary research.
+    </p>
+
+    <p>
+        We believe in <strong>collaborative innovation</strong>—developing impactful programs, 
+        sharing knowledge, and addressing global challenges through partnerships grounded 
+        in mutual respect, cultural fluency, and shared purpose.
+    </p>
+
+    <p><strong>Our key areas of collaboration include:</strong></p>
+
+    <ul style="margin-left:20px;">
+        <li>Curriculum development and academic strategy</li>
+        <li>Joint research initiatives</li>
+        <li>Faculty and student exchanges</li>
+        <li>Capacity building and training programs</li>
+    </ul>
+
+    <h2 style="color:#1a3a1f; margin-top: 30px; font-size: 26px;">Academic Collaboration</h2>
+
+    <p>
+        Drawing on our strong academic foundation, AIMS works with institutions worldwide 
+        to co-develop curricula, strengthen academic programs, and support national and 
+        regional education needs.
+    </p>
+
+    <p>Our major partnerships include:</p>
+
+    <!-- PARTNERS SECTION -->
+    <section class="partners-section" 
+        style="padding: 40px 15px; margin-top: 30px; 
+               background: linear-gradient(135deg, #1a3a1f 0%, #2d5a34 100%); border-radius: 12px;">
+
+        <div class="section-container" style="max-width: 1200px; margin: 0 auto; text-align:center;">
+
+            <h2 style="color:white; font-size: 30px; font-weight: 800; margin-bottom: 35px;">
+                Our Valued Partners 
+                <i class="fas fa-handshake" style="color:#f8c537; margin-left:10px;"></i>
+            </h2>
+
+            <!-- LOGOS GRID -->
+            <div class="partners-grid"
+                style="display: grid; 
+                       grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); 
+                       gap: 25px; padding: 10px 0;">
+
+                <!-- Partner Logo Card -->
+                <div class="partner-card" 
+                    style="background:white; border-radius:12px; padding:20px; 
+                           display:flex; align-items:center; justify-content:center;
+                           height:140px; box-shadow:0 5px 12px rgba(0,0,0,0.1);">
+                    <img src="images/rwandaFlag.png" alt="Government of Rwanda"
+                        style="max-height:75px; object-fit:contain;">
                 </div>
-                <h1>Global Partnership</h1>
-                <p>We are a pan-African organization founded in 2018 with the vision of transforming the scientific landscape across Africa by investing in its most valuable resource: its youth.</p>
-                
-                <h2>Our Story</h2>
-                <p>Founded by a group of African scientists and educators who recognized the immense potential of young African minds, our organization was born from the belief that science education is the key to Africa's sustainable development.</p>
-                
-                <h2>Our Values</h2>
-                <ul>
-                    <li><strong>Excellence:</strong> We strive for the highest standards in education and research</li>
-                    <li><strong>Innovation:</strong> We encourage creative thinking and novel approaches</li>
-                    <li><strong>Collaboration:</strong> We believe in the power of working together</li>
-                    <li><strong>Inclusivity:</strong> We welcome students from all backgrounds and regions</li>
-                </ul>
+
+                <div class="partner-card" 
+                    style="background:white; border-radius:12px; padding:20px; 
+                           display:flex; align-items:center; justify-content:center;
+                           height:140px; box-shadow:0 5px 12px rgba(0,0,0,0.1);">
+                    <img src="images/mastercard.png" alt="Mastercard Foundation"
+                        style="max-height:75px; object-fit:contain;">
+                </div>
+
+                <div class="partner-card" 
+                    style="background:white; border-radius:12px; padding:20px; 
+                           display:flex; align-items:center; justify-content:center;
+                           height:140px; box-shadow:0 5px 12px rgba(0,0,0,0.1);">
+                    <img src="images/URLogo.png" alt="University of Rwanda"
+                        style="max-height:75px; object-fit:contain;">
+                </div>
+
+                <div class="partner-card" 
+                    style="background:white; border-radius:12px; padding:20px; 
+                           display:flex; align-items:center; justify-content:center;
+                           height:140px; box-shadow:0 5px 12px rgba(0,0,0,0.1);">
+                    <img src="images/partner4.png" alt="Partner 4"
+                        style="max-height:75px; object-fit:contain;">
+                </div>
+
+                <div class="partner-card" 
+                    style="background:white; border-radius:12px; padding:20px; 
+                           display:flex; align-items:center; justify-content:center;
+                           height:140px; box-shadow:0 5px 12px rgba(0,0,0,0.1);">
+                    <img src="images/partner5.png" alt="Partner 5"
+                        style="max-height:75px; object-fit:contain;">
+                </div>
+
             </div>
+
+            <p style="color:rgba(255,255,255,0.9); font-size:16px; margin-top:30px;">
+                We proudly collaborate with leading institutions to advance mathematical sciences across Africa.
+            </p>
+            
+
+        </div>
+    </section>
+<p> These partnerships help extend the impact of AIMS Rwanda across sectors and borders, supporting inclusive education and sustainable development across the continent.
+           </p>
+</div>
+
             <!-- Leadership -->
             
             <div id="Leadership" class="content-page">
@@ -1202,7 +1842,7 @@
                 </div>
                 <div class="card">
                 <img src="images/Kimpolo.png" alt="Director of AIMS Industry Initiative">
-                <div class="name">Sajid Ali, Director Internal Audit</div>
+                <div class="name">Dr. Charles Kimpolo, Director of AIMS Industry Initiative</div>
                 </div>
                 
             </div>
@@ -1232,7 +1872,7 @@
                 </div>
                 <div class="card">
                 <img src="images/2P5A2426.png" alt="Programe">
-                <div class="name">Daisy Nirema,Program Officer </div>
+                <div class="name">Daisy Nirema,Program Manager </div>
                 </div>
                 <div class="card">
                 <img src="images/Munyampirwa.png" alt="Communications">
@@ -1246,8 +1886,8 @@
             </div>
             <div class="container">
                 <div class="card">
-                <img src="images/mary.png" alt="assistent">
-                <div class="name">Mary Nyampinga, Board Secretary and Administrative Assistant</div>
+                <img src="images/yvonne.jpg" alt="assistent">
+                <div class="name">Marie Yvonne Uwera, Academic Support Officer</div>
                 </div>
                 <div class="card">
                 <img src="images/bona.png" alt="finance1">
